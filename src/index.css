@@ -77,7 +77,92 @@
   gap: 1rem;
 }
 
-.task-input,
+.task-input {
+  flex: 1;
+}
+
+.task-controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.control-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.edit {
+  background: var(--purple);
+  color: var(--white);
+}
+
+.delete {
+  background: var(--pink);
+  color: var(--white);
+}
+
+.move-buttons {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.move-btn {
+  background: var(--orange);
+  color: var(--white);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-container {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.edit-input {
+  flex: 1;
+  padding: 8px;
+  border: 2px solid var(--lavender);
+  border-radius: 6px;
+  font-family: 'Lato', sans-serif;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.confirm-edit {
+  background: var(--purple);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cancel-edit {
+  background: var(--lavender);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 .task-description-input {
   flex: 1;
   padding: 12px;
@@ -181,6 +266,17 @@
   color: var(--purple);
   font-style: italic;
   margin: 4px 0;
+}
+
+/* Hover effects */
+.add-button:hover,
+.action-btn:hover,
+.control-btn:hover,
+.move-btn:hover,
+.confirm-edit:hover,
+.cancel-edit:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
 }
 
 @media (max-width: 768px) {
