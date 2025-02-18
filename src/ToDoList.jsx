@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './index.css'; // Create this CSS file
 
 function ToDoList() {
   // Changed initial tasks to objects with "text" and "completed" properties
-  const [tasks, setTasks] = useState([]);
+  // Load tasks from localStorage on initial render
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem('tasks');
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
+  
   // newTask now stores a string for the input field
   const [newTask, setNewTask] = useState("");
   // For editing: store the index of the task being edited and its new text
